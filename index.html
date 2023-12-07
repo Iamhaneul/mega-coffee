@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+  <title>메가MGC커피</title>
+
+  <style>
+    /* 데스크탑 우선 */
+    :root{
+      --main-color:#fdd000;
+      font-family:'Noto Snas KR';
+      font-weight:500;
+      font-size:16px;
+      color:#333333;
+      line-height:1.2;
+    }
+    .container{
+      max-width:1280px;
+      margin:0 auto;
+    }
+    .container-full{
+      max-width:100%;
+    }
+    .grid-container4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+    .grid-container6{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:20px;
+    }
+    .grid-container8{
+      display:grid;
+      grid-template-columns:repeat(8,1fr);
+      gap:20px;
+    }
+    .grid-container12{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:20px;
+    }
+
+    #skip-menu a{
+      position:fixed;
+      left:50%;
+      top:0;
+      z-index:2000;
+      transform:translate(-50%,-110%);
+      padding:10px;
+      background:#000;
+      font-size:32px;
+      color:#fff;
+    }
+    #skip-menu a:focus{
+      transform:translate(-50%,0);
+    }
+
+    .header{
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      z-index:1000;
+      padding:30px 0;
+      background:transparent;
+      transition:0.3s;
+    }
+    .header.active{
+      background:#fff;
+    }
+    .header .container{
+      align-items:center;
+    }
+    .header h1{
+      grid-column:1/4;
+      width:200px;
+    }
+    .header .main-tit{
+      display:none;
+    }
+    .header nav{
+      grid-column:4/10;
+    }
+    .header .main-nav{
+      gap:0;
+      font-weight:700;
+      font-size:1.1em;
+      text-align:center;
+    }
+
+    .sub-nav{
+      display:none;
+    }
+    .header .sns{
+      grid-column:11/-1;
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .header .sns li{
+      width:44px;
+      height:44px;
+      margin-left:0.5em;
+      border:2px solid #000;
+      border-radius:50%;
+      padding:4px;
+    }
+    .header .sns li:hover{
+      border-color:var(--main-color);
+      background:var(--main-color);
+    }
+    .btn-nav{
+      display:none;
+    }
+
+    .sec-swiper{
+      height:100vh;
+    }
+    .sec{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:100px;
+    }
+    .sec01{background:rgba(255,0,0,0.4);}
+    .sec02{background:lightsalmon;}
+    .sec03{background:rgba(255,255,0,0.5);}
+    .sec04{background:lightgreen;}
+    .sec05{background:lightblue;}
+    .sec-swiper-pagination{
+      right:auto !important;
+      left:40px !important;
+      top:auto !important;
+      bottom:-30px !important;
+      font-family:'Roboto';
+      font-weight:900;
+      font-size:0.8em;
+    }
+    .sec-swiper-pagination .swiper-pagination-bullet{
+      width:200px;
+      height:20px;
+      border-radius:0;
+      background:transparent;
+      display:flex !important;
+      justify-content:flex-start;
+      align-items:center;
+    }
+    .sec-swiper-pagination .swiper-pagination-bullet::before{
+      content:'';
+      display:none;
+      width:10px;
+      height:2px;
+      margin-right:10px;
+      background:#000;
+    }
+    .sec-swiper-pagination .swiper-pagination-bullet-active{
+      background:transparent;
+    }
+    .sec-swiper-pagination .swiper-pagination-bullet-active::before{
+      display:block;
+    }
+
+    .footer{
+      height:300px;
+      background:#000;
+    }
+
+
+    /* ----- 1280px 이하 시작 ----- */
+    @media (max-width:1280px){
+
+    }
+    /* ----- 1280px 이하 끝 ----- */
+
+
+
+    /* ----- 760px 이하 시작 ----- */
+    @media (max-width:760px){
+      
+    }
+    /* ----- 760px 이하 끝 ----- */
+
+  </style>
+</head>
+<body>
+  <div id="skip-menu"><a href="#">본문 바로가기</a></div>
+  <section id="wrap">
+    <header class="header">
+      <div class="container grid-container12">
+        <h1>
+          <div class="main-tit"><a href="./index.html">메가MGC커피</a></div>
+          <div class="img-box"><a href="./index.html"><img id="header-logo" src="./images/logo-b.png" alt="메가MGC커피 로고"></a></div>
+        </h1>
+        <nav>
+          <ul class="main-nav grid-container6">
+            <li>
+              <a href="#">메가 스토리</a>
+              <ul class="sub-nav">
+                <li><a href="#">브랜드</a></li>
+                <li><a href="#">BI</a></li>
+                <li><a href="#">오시는 길</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메뉴소개</a>
+              <ul class="sub-nav">
+                <li><a href="#">음료</a></li>
+                <li><a href="#">푸드</a></li>
+                <li><a href="#">상품</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">매장</a>
+              <ul class="sub-nav">
+                <li><a href="#">매장찾기</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">창업안내</a>
+              <ul class="sub-nav">
+                <li><a href="#">개설비용</a></li>
+                <li><a href="#">인테리어</a></li>
+                <li><a href="#">창업문의</a></li>
+                <li><a href="#">창업뉴스</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메가소식</a>
+              <ul class="sub-nav">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">고객의 소리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">채용</a>
+              <ul class="sub-nav">
+                <li><a href="#">채용안내</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <ul class="sns">
+          <li><a href="#"><img src="./images/sns-blog.png" alt="blog"></a></li>
+          <li><a href="#"><img src="./images/sns-facebook.png" alt="facebook"></a></li>
+          <li><a href="#"><img src="./images/sns-instagram.png" alt="instagram"></a></li>
+        </ul>
+        <div class="btn-nav">
+          <div class="line">내비버튼</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Slider main container -->
+    <div class="swiper sec-swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper sec-swiper-wrapper">
+        <!-- Slides -->
+          <section class="sec sec01 main swiper-slide">
+            <div class="container container-full">
+              <h2>MAIN</h2>
+            </div>
+          </section>
+          <section class="sec sec02 menu swiper-slide">
+            <div class="container container-full">
+              <h2>MENU</h2>
+            </div>
+          </section>
+          <section class="sec sec03 franchise swiper-slide">
+            <div class="container">
+              <h2>FRANCHISE</h2>
+            </div>
+          </section>
+          <section class="sec sec04 mega swiper-slide">
+            <div class="container container-full">
+              <h2>MEGA</h2>
+            </div>
+          </section>
+          <section class="sec sec05 event swiper-slide">
+            <div class="container">
+              <h2>EVENT</h2>
+            </div>
+          </section>
+      </div>
+      <!-- If we need pagination -->
+      <div class="sec-swiper-pagination swiper-pagination"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+    <footer class="footer">FOOTER</footer>
+  </section>
+
+
+
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/jquery.cookie.min.js"></script>
+  <script src="./js/my-function.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
+
+  <script>
+    // SECTION SWIPER START
+      // 섹션 슬라이드 
+    const secSwiper = new Swiper('.sec-swiper',{
+      direction:'vertical',
+      mousewheel:true,
+      speed:1000,
+      pagination:{
+        el:'.swiper-pagination',
+        clickable:true,
+      },
+    });
+      // 섹션 슬라이드의 마지막 섹션 휠 방향
+    secSwiper.on('reachEnd',function(){
+      secSwiper.mousewheel.disable();
+    })
+      // 섹션 슬라이드 휠 방향에 따른 휠 잠금 방향
+    window.onwheel = function(e){
+      if($('.sec01').hasClass('swiper-sllide-active')){
+        removeActive($('.header'));
+      }else{
+        setActive($('.header'));
+      }
+
+      if($('.sec05').hasClass('swiper-slide-active')){
+        if(e.deltaY>0){
+          // 양수
+          secSwiper.mousewheel.disable();
+        }else{
+          // 음수
+          secSwiper.mousewheel.enable();
+        }
+      }
+    }
+      // 섹션 슬라이드 체인지에 따른 헤더 효과
+    secSwiper.on('slideChangeTransitionEnd',function(){
+      if($('.sec01').hasClass('swiper-slide-active')){
+        removeActive($('.header'));
+        $('#header-logo').attr('src','./images/logo-b.png');
+      }else{
+        setActive($('.header'));
+        $('#header-logo').attr('src','./images/logo.png');
+      }
+    })
+      // 페이지네이션 생성 및 내용
+    $('.sec-swiper-pagination .swiper-pagination-bullet').append('<span class="page-txt"></span>');
+    for(let idx=0;idx<=$('.sec').length-1;idx++){
+      $('.page-txt').eq(idx).text($('.sec h2').eq(idx).text());
+    }
+    // SECTION SWIPER END
+  </script>
+</body>
+</html>
